@@ -24,6 +24,11 @@ class BinaryConfusionMatrix():
             else:
                 self.false_positive+=1
         return np.array([self.true_positive, self.false_negative, self.false_positive, self.true_negative]).reshape(2,2)
+    def calc_recall(self):
+        return self.true_positive/(self.true_positive + self.false_negative)
+    def calc_precision(self):
+        return self.true_positive / (self.true_positive + self.false_positive)
+
 
 
 
